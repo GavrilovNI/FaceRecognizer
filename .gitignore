@@ -1,0 +1,6 @@
+
+*.jpg
+bin/
+Debug/
+Release/
+obj/
