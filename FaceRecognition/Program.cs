@@ -69,9 +69,16 @@ namespace FaceRecognition
 
                 foreach (string file in files)
                 {
-                    Console.WriteLine(file);
-                    var result = Test(new Image<Bgr, byte>(file), recognizer, names);
-                    result.Show();
+                    try
+                    {
+                        Console.WriteLine(file);
+                        var result = Test(new Image<Bgr, byte>(file), recognizer, names);
+                        result.Show();
+                    }
+                    catch(ArgumentException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
                 }
             }
         }
